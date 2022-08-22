@@ -1,6 +1,4 @@
 #!/bin/bash -e
-mvn clean package
-java -jar target/demo-0.0.1-SNAPSHOT.jar -Xms256m &
 rName=$(date +%F)_$(date +%s)
 echo $rName
 echo "*******************Downloading JMeter*******************"
@@ -17,3 +15,5 @@ mv $1_result.csv $1/
 yum install awscli -y
 echo "*******************Copying Results into S3 bucket*******************"
 aws s3 cp $1/ s3://loveisair/$1-$rName-html-report --recursive
+mvn clean package
+java -jar target/demo-0.0.1-SNAPSHOT.jar -Xms256m &
