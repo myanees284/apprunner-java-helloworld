@@ -1,6 +1,6 @@
 #!/bin/bash -e
 mvn clean package
-java -jar target/demo-0.0.1-SNAPSHOT.jar & -Xms256m
+java -jar target/demo-0.0.1-SNAPSHOT.jar -Xms256m &
 rName=$(date +%F)_$(date +%s)
 echo $rName
 echo "*******************Downloading JMeter*******************"
