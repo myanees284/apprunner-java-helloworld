@@ -1,1 +1,1 @@
-# cmanikandan-apprunner-java-helloworld
+# apprunner-java-helloworld
